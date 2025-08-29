@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+
 using F10Y.T0002;
 
 
@@ -35,6 +36,42 @@ namespace F10Y.L0024
             return output;
         }
 
+        public JsonArray Get_Child_AsArray(
+           JsonNode node,
+           string childName)
+        {
+            var child = this.Get_Child(
+                node,
+                childName);
+
+            var output = child.AsArray();
+            return output;
+        }
+
+        public JsonObject Get_Child_AsObject(
+           JsonNode node,
+           string childName)
+        {
+            var child = this.Get_Child(
+                node,
+                childName);
+
+            var output = child.AsObject();
+            return output;
+        }
+
+        public JsonValue Get_Child_AsValue(
+           JsonNode node,
+           string childName)
+        {
+            var child = this.Get_Child(
+                node,
+                childName);
+
+            var output = child.AsValue();
+            return output;
+        }
+
         public T Get_Child_Value<T>(
             JsonNode node,
             string childName)
@@ -53,14 +90,6 @@ namespace F10Y.L0024
             => this.Get_Child_Value<string>(
                 node,
                 childName);
-
-        public JsonValue Get_Child_AsValue(
-            JsonNode node,
-            string childname)
-            => this.Get_Child(
-                node,
-                childname)
-                .AsValue();
 
         public JsonElement Get_Property(
             JsonElement element,
