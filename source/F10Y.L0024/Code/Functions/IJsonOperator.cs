@@ -102,7 +102,7 @@ namespace F10Y.L0024
             string url,
             bool ensureSuccessStatusCode = IValues.EnsureSuccessStatusCode_Default_Constant)
         {
-            var json = await Instances.HttpClientOperator.Get_ReponseContent_AsString(
+            var json = await Instances.HttpClientOperator.Get_ResponseContent_AsString(
                 url,
                 ensureSuccessStatusCode);
 
